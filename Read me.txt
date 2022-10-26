@@ -1,0 +1,19 @@
+Email Automation using Python :
+
+Before we dive into sending emails with HTML content and attachments, you’ll learn to send plain-text emails using Python. 
+These are emails that you could write up in a simple text editor. There’s no fancy stuff like text formatting or hyperlinks. You’ll learn that a bit later.
+
+Starting a Secure SMTP Connection
+When you send emails through Python, you should make sure that your SMTP connection is encrypted, so that your message and login credentials are not easily accessed by others.
+SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are two protocols that can be used to encrypt an SMTP connection. It’s not necessary to use either of these when using a 
+local debugging server.
+
+There are two ways to start a secure connection with your email server:
+
+Start an SMTP connection that is secured from the beginning using SMTP_SSL().
+Start an unsecured SMTP connection that can then be encrypted using .starttls().
+
+In both instances, Gmail will encrypt emails using TLS, as this is the more secure successor of SSL. As per Python’s Security considerations, 
+it is highly recommended that you use create_default_context() from the ssl module. This will load the system’s trusted CA certificates, 
+enable host name checking and certificate validation, and try to choose reasonably secure protocol and cipher settings.
+
